@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình Quản Lý Sản Phẩm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="chuong3.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1><i class="fas fa-box-open"></i> Trình Quản Lý Sản Phẩm</h1>
+        </header>
+        <main>
+            <div class="card add-form-card">
+                <h2>Thêm sản phẩm mới</h2>
+                <div class="form-group">
+                    <input type="text" id="product-name-input" placeholder="Tên sản phẩm, ví dụ: iPhone 16 Pro">
+                    <button id="add-btn"><i class="fas fa-plus"></i> Thêm</button>
+                </div>
+            </div>
+            <div class="card product-list-card">
+                <div class="card-header">
+                    <h2>Danh sách sản phẩm</h2>
+                    <span id="product-count"></span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <div id="edit-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h2>Chỉnh sửa sản phẩm</h2>
+            <input type="text" id="edit-product-name-input">
+            <div class="modal-actions">
+                <button id="save-btn">Lưu thay đổi</button>
+                <button id="cancel-btn">Hủy</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

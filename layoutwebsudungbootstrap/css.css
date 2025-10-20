@@ -1,0 +1,41 @@
+body {
+    background-color: #f8f9fa; 
+}
+.hh-header {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.hh-company {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #333;
+    font-size: 3rem;
+    text-shadow: 1px 1px 2px #ccc;
+}
+.hh-slogan {
+    color: #777;
+    font-style: italic;
+}
+.hh-logo {
+    max-width: 150px;
+    height: auto;
+}
+.hh-product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hh-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.contact-details p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.contact-details .fas {
+    width: 40px;
+    color: var(--bs-primary); 
+    margin-right: 10px;
+}

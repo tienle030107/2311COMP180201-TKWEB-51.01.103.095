@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#aquarium {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+#sand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #F4A460;
+}
+.diver {
+    position: absolute; 
+    height: auto;
+    transition: transform 0.5s ease; 
+}
+.diver img {
+    width: 100%;
+    height: auto;
+}
+#shark { top: 300px; left: 50px; width: 250px; }
+#diver1 { top: 100px; left: 800px; width: 150px; }
+#diver2 { top: 400px; left: 150px; width: 160px; }
+#diver3 { top: 50px; left: 200px; width: 140px; }
+#turtle { top: 500px; left: 700px; width: 120px; }
+#goldFishSchool { top: 250px; left: 400px; width: 220px; }
+#faintSchool { top: 150px; left: 50px; width: 200px; opacity: 0.8; }
+.bubble {
+    position: absolute; bottom: -20px; width: 15px; height: 15px;
+    background-color: rgba(255, 255, 255, 0.3); border-radius: 50%;
+    animation-name: rise; animation-timing-function: linear; animation-iteration-count: infinite;
+}
+.bubble:nth-child(1) { left: 10%; animation-duration: 10s; }
+.bubble:nth-child(2) { left: 20%; animation-duration: 8s; animation-delay: 2s; }
+.bubble:nth-child(3) { left: 35%; animation-duration: 12s; animation-delay: 1s; }
+.controls { position: absolute; top: 20px; right: 20px; z-index: 100; display: flex; gap: 10px; }
+.controls button {
+    font-family: Arial, sans-serif; background-color: rgba(0, 0, 0, 0.5); color: white;
+    border: 2px solid white; border-radius: 8px; padding: 10px 15px; cursor: pointer;
+    font-size: 16px; display: flex; align-items: center; gap: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.controls button:hover { background-color: rgba(0, 0, 0, 0.7); transform: scale(1.05); }
+@keyframes rise {
+    from { bottom: -20px; opacity: 1; transform: scale(0.5); }
+    to { bottom: 100vh; opacity: 0; transform: scale(1.5); }
+}

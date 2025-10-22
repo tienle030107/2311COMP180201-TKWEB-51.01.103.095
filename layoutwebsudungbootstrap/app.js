@@ -30,17 +30,21 @@ const searchForm = document.querySelector('nav .d-flex');
 const searchInput = document.querySelector('nav input[type="search"]');
 const productListContainer = document.getElementById('product-list');
 function renderProducts(productsToRender) {
-    productListContainer.innerHTML = '';
+    productListContainer.innerHTML = ''; 
+    if (!productsToRender || productsToRender.length === 0) {
+        productListContainer.innerHTML = `<p class="col-12 text-center text-muted">Không tìm thấy sản phẩm nào.</p>`;
+        return;
+    }
     productsToRender.forEach(product => {
         const productHTML = `
             <div class="col-md-4 mb-4">
-                <div class="card hh-product-card">
+                <div class="card hh-product-card h-100">
                     <a href="sanpham.html?id=${product.id}">
-                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}" style="height: 200px; object-fit: contain; padding: 10px;">
                     </a>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center d-flex flex-column">
                         <h5 class="card-title">${product.name}</h5>
-                        <p class="card-text text-danger fw-bold">${product.price}</p>
+                        <p class="card-text text-danger fw-bold mt-auto">${product.price}</p>
                     </div>
                 </div>
             </div>
@@ -54,5 +58,12 @@ function performSearch() {
     renderProducts(filteredProducts);
 }
 searchInput.addEventListener('input', performSearch);
-searchForm.addEventListener('submit', (e) => e.preventDefault());
-renderProducts(allShopProducts);
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    performSearch();
+});
+if (productListContainer) {
+     renderProducts(allShopProducts);
+} else {
+    console.error("Không tìm thấy phần tử #product-list");
+}
